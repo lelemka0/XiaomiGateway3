@@ -32,7 +32,6 @@ Converter may have different types:
 
 - Converter - default, don't change/convert value
 - BoolConv - converts int to bool on decode and bool to int on encode
-- ConstConv - set constant value on any input
 - MapConv - translate value using mapping: `{0: "disarmed", 1: "armed_home"}`
 - MathConv - support multiply, round value and min/max borders
 - BrightnessConv - converts `0..<max>` to `0..255`, support set `max` value
@@ -1323,6 +1322,7 @@ DEVICES += [{
 }, {
     # brightness 1..100, color_temp 2700..6500
     3416: ["PTX", "Mesh Downlight", "090615.light.mlig01"],
+    4924: ["PTX", "Mesh Downlight", "090615.light.mlig02"],
     "spec": [
         Converter("light", "light", mi="2.p.1"),
         BrightnessConv("brightness", mi="2.p.2", parent="light", max=100),
@@ -1400,6 +1400,7 @@ DEVICES += [{
                  min=0, max=1638400, enabled=False),
     ],
 }, {
+    5937: ["Xiaomi", "Mesh Triple Wall Switch", "DHKG05"],
     2093: ["PTX", "Mesh Triple Wall Switch", "PTX-TK3/M"],
     3878: ["PTX", "Mesh Triple Wall Switch", "PTX-SK3M"],
     "spec": [
